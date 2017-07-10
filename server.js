@@ -6,10 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(function(req, res, next){
   debugger;
-  if (req.headers['x-forward-proto'] === 'http') {
-    next();
-  }
-  else {
+  if (!req.headers['x-forward-proto'] === 'http') {
     res.redirect('http://' + req.hostname + req.url);
   }
 });
