@@ -27,8 +27,9 @@ var Weather = React.createClass({
     }, function (e){
       that.setState({
         isLoading: false,
-        errorMessage: e.message
+
       });
+      alert(e.message);
     });
   },
   render: function () {
@@ -52,7 +53,6 @@ var Weather = React.createClass({
         <h1 className = "text-center">Get Weather</h1>
         <WeatherForm onSearch = {this.handleSearch}/>
         {renderMessage()}
-        {renderError()}
       </div>
 
     )
