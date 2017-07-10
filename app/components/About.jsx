@@ -3,7 +3,10 @@ var React = require('react');
 //Stateless functions
 var About = () => {
   return (
-    <h3>About Component</h3>
+    <div>
+      <h3>About Component</h3>
+      <p>It is the about page</p>
+    </div>
   );
 };
 
