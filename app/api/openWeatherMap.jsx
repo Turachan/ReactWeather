@@ -10,13 +10,13 @@ module.exports = {
     var URL = OPEN_WEATHER_MAP_URL+location+encodedURL;
     console.log(URL);
     return axios.get(URL).then(function(res){
-      if(res.data.list.size == 0){
-        throw new Error(res.data.message);
+      if(res.data.list.length === 0){
+        throw new Error("City not found");
       } else {
         return res.data.list;
       }
     }, function(res) {
-      throw new Error(res.data.message);
+      throw new Error("City not found");
     });
   }
 }
